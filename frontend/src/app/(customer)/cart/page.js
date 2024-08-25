@@ -161,7 +161,7 @@ export default function Page() {
           <p className="text-xl font-semibold text-gray-800">
             Total: ₹ {totalAmount.toFixed(2)}
           </p>
-          <button className="bg-[var(--accent)] text-white px-4 py-2 rounded-md shadow-md hover:bg-[var(--accent2)] focus:outline-none focus:ring-2 focus:ring-indigo-500" onClick={paymentGateway}>
+          <button className="bg-[var(--accent)] text-white px-4 py-2 btn" onClick={paymentGateway}>
             Buy Now
           </button>
         </div>

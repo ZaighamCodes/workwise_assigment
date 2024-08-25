@@ -73,12 +73,12 @@ const ProductDetail = ({ params }) => {
             <p className="text-lg font-semibold text-gray-800 mb-2">
               Category: {product.category}
             </p>
-            <p className="text-lg font-semibold text-gray-800 mb-2">
-              Price: ₹{product.price}
+            <p className="text-lg font-semibold text-gray-800 mb-2 flex gap-1">
+              Price: ₹ <p className="text-gray-500 line-through">{product.price}</p>  {product.price - product.discount}
             </p>
-            <p className="text-lg font-semibold text-gray-800 mb-2">
-              Discount: ₹{product.discount}
-            </p>
+            
+             
+            
             <p className="text-md text-gray-600 mb-4">{product.description}</p>
             <div className="flex items-center mb-4">
               <button
@@ -102,7 +102,7 @@ const ProductDetail = ({ params }) => {
             </div>
             <button
               onClick={handleAddToCart}
-              className="w-full py-2 px-4 bg-[var(--accent)] text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full py-2 px-4 bg-[var(--accent)] text-white btn"
             >
               Add to Cart
             </button>

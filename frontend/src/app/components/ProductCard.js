@@ -17,7 +17,7 @@ const ProductCard = ({ imageSrc, title, price, id, discount }) => {
     if (token) {
       try {
         const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/cart`, // Adjust this endpoint if necessary
+          `${process.env.NEXT_PUBLIC_API_URL}/api/cart`,
           {
             productId: id,
             quantity: quantity,
@@ -48,12 +48,10 @@ const ProductCard = ({ imageSrc, title, price, id, discount }) => {
       <div className="p-4">
         <h2 className="text-xl font-semibold text-gray-800 mb-2">{title}</h2>
         <div className="price-div flex justify-between">
-          <p className="text-lg font-bold text-gray-800 mb-4">
-            ₹ {price - discount}
+          <p className="text-lg font-bold text-gray-800 mb-4 flex gap-1">
+            ₹  <p className="text-gray-500 line-through">{price}</p> {price - discount}
           </p>
-          <p className="text-lg font-bold text-gray-400 mb-4 line-through">
-            ₹ {price}
-          </p>
+         
         </div>
 
         <div className="flex items-center mb-4">
@@ -78,12 +76,12 @@ const ProductCard = ({ imageSrc, title, price, id, discount }) => {
         </div>
         <div className="flex gap-2">
           <button
-            className="w-full py-2 px-4 bg-[var(--accent)] text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full py-2 px-4 bg-[var(--accent)] text-white btn"
             onClick={cartHandler}
           >
             Add to Cart
           </button>
-          <Link href={`/productdetail/${id}`} className="w-full py-2 px-4 bg-[var(--accent)] text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center">View</Link>
+          <Link href={`/productdetail/${id}`} className="w-full py-2 px-4 bg-[var(--accent)] btn-inactive flex items-center justify-center">View</Link>
         </div>
       </div>
     </div>

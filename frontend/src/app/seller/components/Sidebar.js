@@ -9,7 +9,7 @@ import { RiLogoutBoxFill } from "react-icons/ri";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
-  const { setAuthenticated, logout } = useGlobal();
+  const {  logout } = useGlobal();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);

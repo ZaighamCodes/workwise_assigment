@@ -16,7 +16,7 @@ const Page = () => {
     discount: "",
     image: null,
   });
-  const discountRef = useRef(null); // Reference to discount input
+  const discountRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const { logout } = useGlobal();
   const router = useRouter();
@@ -63,7 +63,6 @@ const Page = () => {
     const { name, value } = e.target;
 
     if (name === "discount" && parseFloat(value) >= parseFloat(formData.price)) {
-      // Clear the discount field and focus on it
       setFormData((prevData) => ({
         ...prevData,
         discount: "",
@@ -242,7 +241,7 @@ const Page = () => {
               name="discount"
               value={formData.discount}
               onChange={handleChange}
-              ref={discountRef} // Assign the ref to the discount input
+              ref={discountRef} 
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter discount price"
               required
@@ -270,7 +269,7 @@ const Page = () => {
         <div className="text-right">
           <button
             type="submit"
-            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white btn"
           >
             {productId ? "Update Product" : "Add Product"}
           </button>

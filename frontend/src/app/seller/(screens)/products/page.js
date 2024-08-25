@@ -11,7 +11,6 @@ const ProductTable = () => {
   const { logout , token } = useGlobal();
   const router = useRouter();
 
-  // Fetch products from API
   const fetchProducts = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
@@ -28,7 +27,6 @@ const ProductTable = () => {
       setProducts(data);
     } catch (error) {
       console.error(error);
-      // logout();
     }
   };
 
@@ -37,8 +35,6 @@ const ProductTable = () => {
   useEffect(() => {
     fetchProducts();
   }, []);
-
-  // Pagination logic
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(
@@ -49,8 +45,6 @@ const ProductTable = () => {
   const totalPages = Math.ceil(products.length / productsPerPage);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  // for deleting product
   const deleteHandler = async (id) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
     if (confirmDelete) {

@@ -9,10 +9,10 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <div className="parent mx-auto mt-2 top-0">
-      <nav className="flex justify-between items-center container bg-[var(--accent)] p-2 rounded-sm shadow-lg relative">
+      <nav className="flex justify-between items-center container bg-[var(--accent)] p-2 rounded-md shadow-lg relative">
         {/* Logo/Title */}
         <Link href="/" className="text-white font-bold text-xl">
-          Wo
+          WorkWise Store
         </Link>
 
         {/* Desktop Menu */}

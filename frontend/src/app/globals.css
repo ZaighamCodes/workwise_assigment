@@ -17,8 +17,7 @@
   .sidebar-desktop {
     display: none;
   }
-  .sidebar-bottom-dock 
-  {
+  .sidebar-bottom-dock {
     display: block !important;
   }
 }
@@ -31,18 +30,30 @@
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
-.sidebar-bottom-dock
-{
-
+.sidebar-bottom-dock {
   display: none;
 }
 
-.seller-page-right
-{
+.seller-page-right {
   overflow-x: auto;
 }
 
-.product-image
- {
+.product-image {
   height: 100%;
- }
+}
+
+.btn {
+  background: var(--accent);
+  border-radius: 5px;
+  &:hover {
+    background: var(--accent2);
+  }
+}
+.btn-inactive {
+  background: var(--accent2);
+  border-radius: 5px;
+  color: white;
+  &:hover {
+    background: var(--accent);
+  }
+}

@@ -1,12 +1,11 @@
 "use client";
-import React, { createContext, useState, useContext, useEffect } from "react";
-import "./globals.css";
-import Header from "./(customer)/components/header/Header";
-import { usePathname } from "next/navigation";
-import { Inter } from "next/font/google";
-import { useRouter } from "next/navigation";
 import md5 from "md5";
-import toast, { Toaster } from "react-hot-toast";
+import { Inter } from "next/font/google";
+import { usePathname, useRouter } from "next/navigation";
+import { createContext, useContext, useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
+import Header from "./(customer)/components/header/Header";
+import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 const GlobalContext = createContext();
@@ -33,24 +32,12 @@ const GlobalProvider = ({ children }) => {
     }
   }, [authenticated, pathname]);
 
-  // logout  user
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userRole");
     setAuthenticated(false);
     router.push("/");
   };
-  // useEffect(() => {
-  //   if (!authenticated && pathname.startsWith("/seller")) {
-  //     router.push("/");
-  //   } else if (
-  //     authenticated &&
-  //     role !== md5("seller") &&
-  //     pathname.startsWith("/seller")
-  //   ) {
-  //     router.push("/");
-  //   }
-  // }, [authenticated, role, pathname, router]);
 
   useEffect(() => {
     if (authenticated) {

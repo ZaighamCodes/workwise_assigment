@@ -51,7 +51,7 @@ export default function Home() {
           />
           <button
             onClick={handleSearch}
-            className="ml-4 px-4 py-2 bg-[var(--accent)] text-white rounded-md shadow-md hover:bg-[var(--accent2)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            className="ml-4 px-4 py-2 btn text-white"
           >
             Search
           </button>
@@ -59,7 +59,7 @@ export default function Home() {
           {searchQuery && (
             <button
               onClick={clearSearch}
-              className="ml-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-md shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
+              className="ml-2 px-4 py-2 btn-inactive"
             >
               Clear
             </button>
