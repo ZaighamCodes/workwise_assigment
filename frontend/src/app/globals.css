@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #1e201e;
+  --accent2: #1e201ec2;
+}
+.parent {
+  width: 100%;
+  .container {
+    max-width: 1400px;
+    margin: auto;
+  }
+}
+@media (max-width: 800px) {
+  .sidebar-desktop {
+    display: none;
+  }
+  .sidebar-bottom-dock 
+  {
+    display: block !important;
+  }
+}
+
+.glass {
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.sidebar-bottom-dock
+{
+
+  display: none;
+}
+
+.seller-page-right
+{
+  overflow-x: auto;
+}
+
+.product-image
+ {
+  height: 100%;
+ }
